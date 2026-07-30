@@ -15,7 +15,63 @@ import streamlit as st
 # ---------------------------------------------------------------------------
 
 st.set_page_config(
+   st.set_page_config(
     page_title="Healthcare AI Response Evaluator",
+    page_icon="🏥",
+    layout="wide",
+)
+
+st.title("🏥 Healthcare AI Response Evaluator")
+
+st.caption("Version 2.0 | Human-in-the-Loop Quality Assurance Platform")
+
+st.markdown("""
+### Improving the Safety and Quality of AI in Healthcare
+
+Artificial intelligence has enormous potential to support clinicians, patients, and caregivers—but healthcare AI must be evaluated carefully before it can be trusted.
+
+This project demonstrates a structured quality assurance workflow for reviewing AI-generated healthcare responses using evidence-based evaluation criteria. Rather than replacing human judgment, the evaluator helps reviewers identify strengths, safety concerns, communication issues, and opportunities for improvement.
+
+---
+
+### What this project evaluates
+
+✅ Medical Accuracy
+
+✅ Patient Safety
+
+✅ Urgency Recognition
+
+✅ Actionability
+
+✅ Clarity
+
+✅ Empathy
+
+✅ Responsible Limitations
+
+✅ Appropriate Escalation
+
+---
+
+### Designed for
+
+• Healthcare AI Quality Assurance
+
+• Clinical Documentation Review
+
+• AI Safety Research
+
+• Medical AI Product Development
+
+• Human Reviewer Training
+
+---
+
+⚠️ **Important**
+
+This application is a portfolio demonstration intended for educational purposes. It does **not** provide medical advice and is **not** intended for clinical decision-making. All healthcare recommendations should be reviewed by qualified medical professionals.
+""")
     page_icon="🩺",
     layout="wide",
     initial_sidebar_state="expanded",
