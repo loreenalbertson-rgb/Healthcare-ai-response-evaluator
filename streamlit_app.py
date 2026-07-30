@@ -598,8 +598,8 @@ def score_guidance(category: str, score: int) -> str:
 
 
 def navigate_to(page: str) -> None:
-    st.session_state.navigation = page
-    st.rerun()
+    """Update sidebar navigation from a widget callback."""
+    st.session_state["navigation"] = page
 
 
 def build_report(
@@ -1144,27 +1144,30 @@ if current_page == "Home":
 
     action_one, action_two, action_three = st.columns(3)
     with action_one:
-        if st.button(
+        st.button(
             "Start an evaluation",
             type="primary",
             use_container_width=True,
             key="home_start_evaluation",
-        ):
-            navigate_to("Evaluate Response")
+            on_click=navigate_to,
+            args=("Evaluate Response",),
+        )
     with action_two:
-        if st.button(
+        st.button(
             "Browse clinical cases",
             use_container_width=True,
             key="home_browse_cases",
-        ):
-            navigate_to("Clinical Case Library")
+            on_click=navigate_to,
+            args=("Clinical Case Library",),
+        )
     with action_three:
-        if st.button(
+        st.button(
             "Review methodology",
             use_container_width=True,
             key="home_methodology",
-        ):
-            navigate_to("Methodology")
+            on_click=navigate_to,
+            args=("Methodology",),
+        )
 
     st.warning(
         "Use fictional or fully de-identified content only. This tool does not "
